@@ -8,8 +8,8 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
 import android.os.IBinder
-import android.support.annotation.RequiresApi
 import android.util.Log
+import androidx.annotation.RequiresApi
 
 class MyService : Service() {
 
@@ -24,8 +24,8 @@ class MyService : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createChannelId()
             startForeground(    //Muestra la notificacion. Al detener el servicio, la notificación también lo hará
-                1,
-                createNotification()
+                    1,
+                    createNotification()
             )
         }
         Counter().execute()
@@ -50,10 +50,10 @@ class MyService : Service() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotification(): Notification {
         return Notification.Builder(applicationContext, CHANNEL_ID)
-            .setContentTitle("Ejecutando MyService")
-            .setContentText("Contando")
-            .setSmallIcon(R.mipmap.ic_launcher)
-            .build()
+                .setContentTitle("Ejecutando MyService")
+                .setContentText("Contando")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .build()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

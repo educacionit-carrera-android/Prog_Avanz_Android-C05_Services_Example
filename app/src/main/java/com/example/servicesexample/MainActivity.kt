@@ -7,10 +7,10 @@ import android.content.ServiceConnection
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         varbtnObtenerNumero.setOnClickListener {
             if (mBound) {
                 Toast.makeText(this, boundService.getRandomNumber().toString(), Toast.LENGTH_LONG)
-                    .show()
+                        .show()
             }
         }
 
